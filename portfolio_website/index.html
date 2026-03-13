@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amaldev K M</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Clash Display + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+  ============================================================ -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Amaldev<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile menu drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero">
+    <!-- Ambient glow blobs -->
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <!-- Floating particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="hero-inner">
+      <!-- LEFT CONTENT -->
+      <div class="hero-left" data-aos="fade-right">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Amaldev</h1>
+        <div class="hero-title-wrapper">
+          <span class="hero-title-prefix">—</span>
+          <span class="hero-title typed-text" id="typedText"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-intro">
+         Transforming raw data into strategic insights. 
+         I leverage advanced analytics and machine learning 
+         to build intelligent models that drive smarter business decisions.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <div class="hero-social-icons">
+            <!-- GitHub -->
+            <a href="https://github.com/amaldev-data" target="_blank" class="icon-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/amaldevkm/" target="_blank" class="icon-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Resume -->
+            <a href="assets/docs/resume.pdf" download class="icon-link resume-icon" aria-label="Download Resume">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11zm-3-7H9v-2h6v2zm0 4H9v-2h6v2zm-2-8V3.5L18.5 9H13z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — PROFILE PHOTO -->
+      <div class="hero-right" data-aos="fade-left">
+        <div class="profile-frame">
+          <div class="profile-glow"></div>
+          <img src="assets/images/profile.jpeg" alt="Amal — Data Scientist" class="profile-img" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About">
+      <div class="scroll-line"></div>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- LEFT — About text -->
+        <div class="about-text" data-aos="fade-right">
+          <p>
+            I'm a data-driven professional who sits at the intersection of
+            economics and technology. With an MBA in Finance & Marketing from
+            APJ Abdul Kalam Technological University and a Bachelor's in
+            Commerce (Computer Application) from Mahatma Gandhi University,
+            I bring a rare blend of business acumen and analytical depth to
+            every project.
+          </p>
+          <p>
+            Currently pursuing a Diploma in Data Science and AI at Edure
+            Learning, I've sharpened my skills across the full data pipeline—
+            from cleaning and EDA to building predictive ML models. My
+            professional stints at Toir Business Solutions and Geojit Financial
+            Services gave me hands-on exposure to financial data analysis,
+            equity research, and business intelligence.
+          </p>
+          <p>
+            I am passionate about turning messy, real-world datasets into
+            clear narratives that empower better decisions. Whether it's
+            risk-scoring global data centers or predicting used car prices,
+            I love solving problems that matter.
+          </p>
+          <div class="about-badges">
+            <span class="badge">Python</span>
+            <span class="badge">Machine Learning</span>
+            <span class="badge">Power BI</span>
+            <span class="badge">Financial Analysis</span>
+            <span class="badge">SQL</span>
+          </div>
+        </div>
+
+        <!-- RIGHT — Split Timeline -->
+        <div class="timeline-wrapper" data-aos="fade-left">
+          <h3 class="timeline-heading">My Journey</h3>
+
+          <!-- EXPERIENCE sub-section -->
+          <div class="tl-group">
+            <div class="tl-group-label exp-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              Experience
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot exp"></div>
+                <div class="tl-content">
+                  <h4>Research & Data Analyst</h4>
+                  <p class="tl-org">Toir Business Solutions Pvt Ltd</p>
+                  <p class="tl-date">Feb 2024 – May 2025</p>
+                  <p class="tl-desc">Validated data from open-source platforms; built dashboards in Excel & Power BI to communicate insights to stakeholders.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot exp"></div>
+                <div class="tl-content">
+                  <h4>Product & Data Analyst Intern</h4>
+                  <p class="tl-org">Geojit Financial Services Ltd</p>
+                  <p class="tl-date">May 2024 – Jul 2024</p>
+                  <p class="tl-desc">Worked on equity research reports and digital investment products; evaluated and reported bugs in online platforms.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EDUCATION sub-section -->
+          <div class="tl-group">
+            <div class="tl-group-label edu-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              Education
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot edu"></div>
+                <div class="tl-content">
+                  <h4>Diploma in Data Science & AI</h4>
+                  <p class="tl-org">Edure Learning</p>
+                  <p class="tl-date">2025 – Present</p>
+                  <p class="tl-desc">Hands-on curriculum covering Python, ML algorithms, data visualisation, and real-world project work.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot edu"></div>
+                <div class="tl-content">
+                  <h4>MBA – Finance & Marketing</h4>
+                  <p class="tl-org">APJ Abdul Kalam Technological University</p>
+                  <p class="tl-date">2023 – 2025</p>
+                  <p class="tl-desc">Specialised in financial modelling, marketing analytics, and business strategy.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot edu"></div>
+                <div class="tl-content">
+                  <h4>B.Com – Computer Application</h4>
+                  <p class="tl-org">Mahatma Gandhi University, Kottayam</p>
+                  <p class="tl-date">2020 – 2023</p>
+                  <p class="tl-desc">Foundation in commerce principles, computer applications, and quantitative methods.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /timeline-wrapper -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS SECTION
+  ============================================================ -->
+  <section id="skills">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Skills & Tools</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Category 1 -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">HTML</span>
+             <span class="pill">CSS</span>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3>Data Science & ML</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">NumPy</span>
+            <span class="pill">Pandas</span>
+              <span class="pill">Matplotlib</span>
+            <span class="pill">Seaborn</span>
+            <span class="pill">Plotly</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Scikit-Learn</span>
+            <span class="pill">Tensorflow</span>
+          </div>
+        </div>
+
+        
+
+        <!-- Category 3 -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-card-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+            </div>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="skill-pills">
+            
+            <span class="pill">Jupyter Notebook</span> 
+            <span class="pill">VS Code</span>
+            <span class="pill">Anaconda</span>
+            <span class="pill">MS Excel</span>
+            <span class="pill">IBM SPSS</span>
+            <span class="pill">MS Word</span>
+            <span class="pill">PowerPoint</span>
+            <span class="pill">Power Query</span>
+            <span class="pill">Power BI</span>
+          
+          </div>
+        </div>
+
+        <!-- Category 4 — Generative AI -->
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+          <div class="skill-card-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><path d="M18 2v4h4"/><path d="M22 2l-4 4"/></svg>
+            </div>
+            <h3>Generative AI</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="pill">Chat GPT</span>
+            <span class="pill">Claude AI</span>
+            <span class="pill">Anti Gravity</span>
+            <span class="pill">Notebook LM</span>
+             <span class="pill">Promptperfect</span>
+            <span class="pill">Kimi AI</span>
+            <span class="pill">Google Gemini</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS SECTION
+  ============================================================ -->
+  <section id="projects">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img-wrap">
+            <img src="assets/images/project1.png" alt="Global Data Center Infrastructure Analysis" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="project-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Project Image</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-cat">Research & Visualization</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Global Data Center Infrastructure Analysis</h3>
+            <p class="project-desc">Assessed environmental, operational, physical, and cyber risks for potential data-center sites worldwide using multi-source datasets and ML models.</p>
+            <div class="project-tags">
+              <span>Python</span><span>Power BI</span><span>Excel</span><span>ML</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-review" onclick="openModal('modal1')">Review Project</button>
+              <a href="https://github.com/amaldev-data/Datacenter_Project" target="_blank" class="btn btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img-wrap">
+            <img src="assets/images/project2.png" alt="Used Car Price Prediction" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="project-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Project Image</span>
+            </div>
+            <div class="project-overlay">
+              <span class="project-cat">Machine Learning</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Used Car Price Prediction</h3>
+            <p class="project-desc">Built a Multiple Linear Regression model to predict used car prices, analysing vehicle specs and market attributes with comprehensive EDA.</p>
+            <div class="project-tags">
+              <span>Scikit-Learn</span><span>Pandas</span><span>Seaborn</span><span>Regression</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-review" onclick="openModal('modal2')">Review Project</button>
+              <a href="https://github.com/amaldev-data/Machine-Learning-Projects-/tree/main/Usedcar_price_prediction" target="_blank" class="btn btn-gh">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT MODALS -->
+
+  <!-- Modal 1 — Data Center Risk Scoring -->
+  <div class="modal-overlay" id="modal1" onclick="closeModalOutside(event, 'modal1')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+      <div class="modal-header">
+        <span class="modal-tag">Research & Risk Modelling</span>
+        <h2>Global Data Center Risk Scoring</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4>Problem Statement</h4>
+          <p>With the rapid global expansion of digital infrastructure, understanding where data 
+            centers are concentrated, which countries are investing in new facilities, and which companies dominate the market is important for investors, policymakers,
+             and technology planners. A structured analysis is needed to track global data-center distribution and identify emerging growth regions.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Dataset Used</h4>
+          <p>Open datasets sourced from Kaggle containing global data-center information, 
+            including number of facilities by country, major companies operating data centers, 
+            and records of upcoming or planned data-center projects.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Methodology</h4>
+          <p>Data was cleaned and transformed using Excel, Power Query, and Python (Pandas). 
+            Country-level aggregations were performed to calculate the total number of data centers, upcoming projects,
+             and company ownership distribution. The processed data was visualised in interactive Power BI dashboards for geographic and market analysis..</p>
+        </div>
+        <div class="modal-section">
+          <h4>Models & Techniques</h4>
+          <p>Data cleaning and transformation, aggregation analysis, trend analysis, 
+            and interactive dashboard visualisation. Python was used for preprocessing and exploratory analysis, 
+            while Power BI was used to create geographic maps, comparative charts, and company distribution visuals.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Results & Insights</h4>
+          <p>The dashboard provides a global overview of data-center distribution by country,
+             highlights regions with the highest number of upcoming projects, and identifies the top companies operating data centers worldwide.
+              The analysis reveals major infrastructure hubs and emerging markets where data-center investments are growing rapidly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 — Car Price Prediction -->
+  <div class="modal-overlay" id="modal2" onclick="closeModalOutside(event, 'modal2')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+      <div class="modal-header">
+        <span class="modal-tag">Machine Learning</span>
+        <h2>Used Car Price Prediction</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4>Problem Statement</h4>
+          <p>The used-car market suffers from information asymmetry. Buyers and sellers lack a data-driven benchmark for fair pricing, leading to suboptimal transactions. This project aims to build a reliable price prediction engine.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Dataset Used</h4>
+          <p>A publicly available used-car dataset containing features such as make, model, year, mileage, fuel type, transmission, and seller type across thousands of listings.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Methodology</h4>
+          <p>Comprehensive EDA using Pandas, NumPy, Matplotlib, and Seaborn revealed key pricing drivers. Categorical encoding, outlier removal, and feature scaling were applied before modelling.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Models & Techniques</h4>
+          <p>Multiple Linear Regression (Scikit-learn) was the primary model, with feature importance analysis and cross-validation to guard against overfitting.</p>
+        </div>
+        <div class="modal-section">
+          <h4>Results & Insights</h4>
+          <p>Achieved strong predictive accuracy (R² score reported). Mileage and vehicle age were the dominant price drivers. The model correctly identified premium-brand price premiums that were not apparent in raw data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CERTIFICATIONS SECTION — image gallery grid
+  ============================================================ -->
+  <section id="certifications">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">My Certifications</h2>
+      </div>
+
+      <!-- Navigation arrows + grid -->
+      <div class="cert-gallery-outer" data-aos="fade-up">
+        <button class="cert-arrow cert-prev" id="certPrev" aria-label="Previous page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="cert-gallery-viewport">
+          <div class="cert-gallery-grid" id="certGallery">
+
+            <!-- Cert 1 — certificate1.jpeg -->
+<div class="cert-thumb" data-index="0" onclick="openCertModal(0)" tabindex="0" role="button" aria-label="Business Analyst Professional – Microsoft">
+  <div class="cert-thumb-img-wrap">
+    <img src="assets/images/certificate1.jpeg" alt="Business Analyst Professional" class="cert-thumb-real"
+      onerror="this.parentNode.innerHTML='<div class=cert-thumb-placeholder><div class=cert-placeholder-inner><span>certificate1.jpeg</span></div></div>'" />
+  </div>
+  <div class="cert-thumb-overlay">
+    <p class="cert-thumb-title">Business Analyst Professional</p>
+    <p class="cert-thumb-org">Microsoft</p>
+  </div>
+</div>
+
+<!-- Cert 2 — certificate2.jpeg -->
+<div class="cert-thumb" data-index="1" onclick="openCertModal(1)" tabindex="0" role="button" aria-label="Advance Excel Training – Strategist Data Analytics">
+  <div class="cert-thumb-img-wrap">
+    <img src="assets/images/certificate2.jpeg" alt="Advance Excel Training" class="cert-thumb-real"
+      onerror="this.parentNode.innerHTML='<div class=cert-thumb-placeholder><div class=cert-placeholder-inner><span>certificate2.jpeg</span></div></div>'" />
+  </div>
+  <div class="cert-thumb-overlay">
+    <p class="cert-thumb-title">Advance Excel Training</p>
+    <p class="cert-thumb-org">Strategist Data Analytics</p>
+  </div>
+</div>
+
+<!-- Cert 3 — certificate3.jpeg -->
+<div class="cert-thumb" data-index="2" onclick="openCertModal(2)" tabindex="0" role="button" aria-label="Microsoft Power BI Training – Strategist Data Analytics">
+  <div class="cert-thumb-img-wrap">
+    <img src="assets/images/certificate3.jpeg" alt="Microsoft Power BI Training" class="cert-thumb-real"
+      onerror="this.parentNode.innerHTML='<div class=cert-thumb-placeholder><div class=cert-placeholder-inner><span>certificate3.jpeg</span></div></div>'" />
+  </div>
+  <div class="cert-thumb-overlay">
+    <p class="cert-thumb-title">Microsoft Power BI Training</p>
+    <p class="cert-thumb-org">Strategist Data Analytics</p>
+  </div>
+</div>
+
+                  <!-- Cert 4 — certificate4.jpeg -->
+            <div class="cert-thumb" data-index="3" onclick="openCertModal(3)" tabindex="0" role="button" aria-label="Data Science Methodology – IBM">
+              <div class="cert-thumb-img-wrap">
+                <img src="assets/images/certificate4.jpeg" alt="Data Science Methodology" class="cert-thumb-real"
+                  onerror="this.parentNode.innerHTML='<div class=cert-thumb-placeholder><div class=cert-placeholder-inner><span>certificate4.jpeg</span></div></div>'" />
+              </div>
+              <div class="cert-thumb-overlay">
+                <p class="cert-thumb-title">Data Science Methodology</p>
+                <p class="cert-thumb-org">IBM</p>
+              </div>
+            </div>
+            
+                  <!-- Cert 5 — certificate5.jpeg -->
+            <div class="cert-thumb" data-index="0" onclick="openCertModal(0)" tabindex="0" role="button" aria-label="Business Analyst Professional – Microsoft">
+              <div class="cert-thumb-img-wrap">
+                <img src="assets/images/certificate5.jpeg" alt="Business Analyst Professional" class="cert-thumb-real"
+                  onerror="this.parentNode.innerHTML='<div class=cert-thumb-placeholder><div class=cert-placeholder-inner><span>certificate5.jpeg</span></div></div>'" />
+              </div>
+              <div class="cert-thumb-overlay">
+                <p class="cert-thumb-title">Financial Analysis and Valuation</p>
+                <p class="cert-thumb-org">Illinois University</p>
+              </div>
+            </div>
+               
+            <!-- Cert 6 — add certificate6.jpeg to show image -->
+            <div class="cert-thumb" data-index="5" onclick="openCertModal(5)" tabindex="0" role="button" aria-label="Investment Risk Management – Coursera">
+              <div class="cert-thumb-img-wrap">
+                <img src="assets/images/certificate6.jpeg" alt="Investment Risk Management" class="cert-thumb-real"
+                  onerror="this.parentNode.innerHTML='<div class=cert-thumb-placeholder><div class=cert-placeholder-inner><span>certificate6.jpeg</span></div></div>'" />
+              </div>
+              <div class="cert-thumb-overlay">
+                <p class="cert-thumb-title">Financial Markets</p>
+                <p class="cert-thumb-org">Yale University</p>
+              </div>
+            </div>
+
+            
+
+          </div><!-- /cert-gallery-grid -->
+        </div><!-- /cert-gallery-viewport -->
+
+        <button class="cert-arrow cert-next" id="certNext" aria-label="Next page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Page dots -->
+      <div class="cert-dots" id="certDots"></div>
+    </div>
+  </section>
+
+  <!-- Certificate detail modal -->
+  <div class="modal-overlay" id="certDetailModal" onclick="closeCertModal(event)">
+    <div class="cert-modal-box">
+      <button class="modal-close" onclick="closeCertModalBtn()" aria-label="Close">&times;</button>
+
+      <!-- Prev / Next inside modal -->
+      <button class="cert-modal-nav cert-modal-prev" id="certModalPrev" aria-label="Previous certificate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="cert-modal-nav cert-modal-next" id="certModalNext" aria-label="Next certificate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <div class="cert-modal-img-wrap" id="certModalImgWrap">
+        <!-- Filled by JS -->
+      </div>
+      <div class="cert-modal-info">
+        <h3 id="certModalTitle"></h3>
+        <p id="certModalOrg"></p>
+        <p id="certModalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+      </div>
+
+      <div class="contact-solo" data-aos="fade-up">
+        <p class="contact-intro">Have a project in mind or want to discuss opportunities? I'd love to hear from you. Let's connect and create something impactful.</p>
+        <div class="contact-cards contact-cards-row">
+          <a href="mailto:amaldev.connect@gmail.com" class="contact-card">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <span class="cc-label">Email</span>
+              <span class="cc-value">amaldev.connect@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/amaldevkm/" target="_blank" class="contact-card">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <span class="cc-label">linkedin.com/in/amaldevkm</span>
+              <span class="cc-value">linkedin.com</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/amaldev-data" target="_blank" class="contact-card">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div>
+              <span class="cc-label">GitHub</span>
+              <span class="cc-value">github.com/amaldev-data</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <a href="#hero" class="footer-logo">
+        <span class="logo-bracket">&lt;</span>Amaldev<span class="logo-bracket">/&gt;</span>
+      </a>
+      <p class="footer-copy">&copy; <span id="year"></span> Amaldev K M . All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://github.com/amaldev-data" target="_blank" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/amaldevkm/" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:amaldev.connect@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
