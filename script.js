@@ -29,7 +29,7 @@ $$('.mobile-link').forEach(l => l.addEventListener('click', () => {
 }));
 
 /* 3. TYPED TEXT */
-const phrases = ['Data Scientist','AI & Machine Learning','Research & Data Analytics','Business Intelligence'];
+const phrases = ['Data Analyst','Research Analyst','Business Intelligence','AI & Machine Learning'];
 let phraseIndex=0, charIndex=0, isDeleting=false;
 const typedEl = $('#typedText');
 function typeLoop() {
