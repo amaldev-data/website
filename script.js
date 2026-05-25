@@ -133,7 +133,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Typewriter Effect
-const typewriterTexts = ["Data Scientist", "Business Intelligence", "Data Analyst"];
+const typewriterTexts = ["BI Analyst","Data Analyst", "Data Scientist","Research Analyst","Data Consultant","Business Analyst"];
 let currentTextIndex = 0;
 let currentCharIndex = 0;
 let isDeleting = false;

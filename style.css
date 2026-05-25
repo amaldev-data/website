@@ -1721,6 +1721,10 @@ footer {
         padding: 60px 5%;
     }
     
+    .section-title {
+        font-size: 2rem;
+    }
+    
     .hero-headline {
         font-size: 2.2rem;
     }
@@ -1814,6 +1818,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
     .hero-headline {
         font-size: 1.8rem;
     }
