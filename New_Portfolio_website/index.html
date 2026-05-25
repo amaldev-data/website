@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaldev - Data Scientist Portfolio</title>
+    <meta name="description" content="Portfolio of Amaldev, Data Scientist and AI Enthusiast.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fallback to similar monospace font as requested Cascadia Code SemiBold -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="math-equations">
+                <span class="eq active">P(A|B) = P(B|A)P(A) / P(B)</span>
+                <span class="eq">f(x) = (1/σ√2π) e<sup>-(x-μ)²/2σ²</sup></span>
+                <span class="eq">y = β₀ + β₁x₁ + ε</span>
+                <span class="eq">∑(x - μ)² / N = σ²</span>
+            </div>
+            <div class="calc-text">CALCULATING DATA...</div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav id="navbar" class="glassmorphism">
+        <div class="nav-content">
+            <a href="#" class="logo">AMALDEV.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i data-feather="moon" class="theme-icon"></i>
+                </button>
+                <button class="hamburger" aria-label="Menu">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ==========================================
+         Hero Section
+         ========================================== -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-left reveal-left">
+                <div class="hero-badge">
+                    <span class="dot"></span> DATA SCIENCE PORTFOLIO
+                </div>
+                <h1 class="hero-headline">Building<br>Insight<br>From<br>Raw Data.</h1>
+                <div class="hero-typewriter">
+                    I am a <span id="typewriter-text"></span><span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-subtitle">Data analytics, machine learning, dashboards,<br>and strategic intelligence transformed into<br>minimal digital experiences.</p>
+                
+
+
+                <div class="hero-footer">
+                    <div class="footer-item">
+                        <div class="top-line"></div>
+                        <span>DATA</span>
+                    </div>
+                    <div class="footer-item">
+                        <div class="top-line"></div>
+                        <span>MACHINE</span>
+                    </div>
+                    <div class="footer-item">
+                        <div class="top-line"></div>
+                        <span>BUSINESS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right reveal-right">
+                <div class="hero-buttons hero-buttons-right">
+                    <a href="#projects" class="btn btn-primary btn-pill">View Projects</a>
+                    <div class="hero-socials">
+                        <a href="#" class="hero-icon" aria-label="Email"><i data-feather="mail"></i></a>
+                        <a href="#" class="hero-icon" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                        <a href="#" class="hero-icon" aria-label="GitHub"><i data-feather="github"></i></a>
+                        <a href="assets/resume/resume.pdf" class="hero-icon" aria-label="Resume Download" download><i data-feather="file-text"></i></a>
+                    </div>
+                </div>
+                <div class="spider-container">
+                    <svg class="spider-chart" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Grid -->
+                        <polygon class="spider-grid" points="100,20 169.28,60 169.28,140 100,180 30.72,140 30.72,60" />
+                        <polygon class="spider-grid" points="100,40 151.96,70 151.96,130 100,160 48.04,130 48.04,70" />
+                        <polygon class="spider-grid" points="100,60 134.64,80 134.64,120 100,140 65.36,120 65.36,80" />
+                        <polygon class="spider-grid" points="100,80 117.32,90 117.32,110 100,120 82.68,110 82.68,90" />
+                        
+                        <!-- Axes -->
+                        <line class="spider-axis" x1="100" y1="100" x2="100" y2="20" />
+                        <line class="spider-axis" x1="100" y1="100" x2="169.28" y2="60" />
+                        <line class="spider-axis" x1="100" y1="100" x2="169.28" y2="140" />
+                        <line class="spider-axis" x1="100" y1="100" x2="100" y2="180" />
+                        <line class="spider-axis" x1="100" y1="100" x2="30.72" y2="140" />
+                        <line class="spider-axis" x1="100" y1="100" x2="30.72" y2="60" />
+                        
+                        <!-- Data Area 1 (Animated) -->
+                        <g class="spider-data-group">
+                            <polygon class="spider-data" points="100,35 150,65 140,125 100,150 55,125 45,75" />
+                            <circle class="spider-point" cx="100" cy="35" r="3"/>
+                            <circle class="spider-point" cx="150" cy="65" r="3"/>
+                            <circle class="spider-point" cx="140" cy="125" r="3"/>
+                            <circle class="spider-point" cx="100" cy="150" r="3"/>
+                            <circle class="spider-point" cx="55" cy="125" r="3"/>
+                            <circle class="spider-point" cx="45" cy="75" r="3"/>
+                        </g>
+
+                        <!-- Data Area 2 (Animated Secondary) -->
+                        <g class="spider-data-group-2">
+                            <polygon class="spider-data-2" points="100,50 135,75 155,135 100,165 40,140 60,80" />
+                            <circle class="spider-point-2" cx="100" cy="50" r="2"/>
+                            <circle class="spider-point-2" cx="135" cy="75" r="2"/>
+                            <circle class="spider-point-2" cx="155" cy="135" r="2"/>
+                            <circle class="spider-point-2" cx="100" cy="165" r="2"/>
+                            <circle class="spider-point-2" cx="40" cy="140" r="2"/>
+                            <circle class="spider-point-2" cx="60" cy="80" r="2"/>
+                        </g>
+                    </svg>
+                    <div class="spider-labels">
+                        <span class="sl sl-top">ML / AI</span>
+                        <span class="sl sl-top-right">Analytics</span>
+                        <span class="sl sl-bottom-right">Business</span>
+                        <span class="sl sl-bottom">Data Viz</span>
+                        <span class="sl sl-bottom-left">Statistics</span>
+                        <span class="sl sl-top-left">Coding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         About Section
+         ========================================== -->
+    <section id="about" class="section">
+        <h2 class="section-title reveal-up">About Me</h2>
+        <div class="about-grid">
+            <div class="about-image-wrapper reveal-left">
+                <img src="assets/profile_picture/profile.jpg" alt="Amaldev" class="profile-pic">
+            </div>
+            <div class="about-text reveal-right">
+                <p>I am a data-driven professional with a strong passion for Data Science, Analytics, and Machine Learning. With expertise in building end-to-end AI systems and developing intuitive business intelligence dashboards, I bridge the gap between raw data and strategic business value.</p>
+                <p>My background combines deep technical skills in predictive modeling, statistical analysis, and programming with a keen eye for visual storytelling through data.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience & Education Sections -->
+    <section id="experience" class="section">
+        <h2 class="section-title reveal-up">Experience & Education</h2>
+        <div class="timeline-container">
+            <!-- Experience -->
+            <div class="timeline-column reveal-left">
+                <h3><i data-feather="briefcase"></i> Experience</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-content">
+                            <h4>Data Scientist</h4>
+                            <h5>Tech Corp</h5>
+                            <span class="timeline-year">2022 - Present</span>
+                            <p>Developed predictive models and AI assistants to streamline internal operations and improve customer retention.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-content">
+                            <h4>Data Analyst</h4>
+                            <h5>DataSys Inc</h5>
+                            <span class="timeline-year">2020 - 2022</span>
+                            <p>Designed and maintained Power BI dashboards for real-time business performance tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Education -->
+            <div class="timeline-column reveal-right">
+                <h3><i data-feather="book-open"></i> Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-content">
+                            <h4>IBM Data Science Certification</h4>
+                            <h5>IBM / Coursera</h5>
+                            <span class="timeline-year">2023</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-content">
+                            <h4>MBA Finance & Marketing</h4>
+                            <h5>University Name</h5>
+                            <span class="timeline-year">2018 - 2020</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-content">
+                            <h4>B.Com Computer Application</h4>
+                            <h5>University Name</h5>
+                            <span class="timeline-year">2015 - 2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title reveal-up">Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card reveal-up">
+                <div class="project-image">
+                    <img src="assets/project_thumbnails/thumb1.jpg" alt="Thumbnail" class="temp-white-thumb">
+                </div>
+                <div class="project-info">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Machine learning model to predict customer churn using historical data.</p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>Scikit-learn</span><span>Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn btn-small view-project-btn" data-project="1">View Project</button>
+                        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card reveal-up" style="transition-delay: 0.1s">
+                <div class="project-image">
+                    <img src="assets/project_thumbnails/thumb2.jpg" alt="Thumbnail" class="temp-white-thumb">
+                </div>
+                <div class="project-info">
+                    <h3>Sales Performance Dashboard</h3>
+                    <p>Interactive Power BI dashboard for global sales forecasting.</p>
+                    <div class="tech-tags">
+                        <span>Power BI</span><span>SQL</span><span>Excel</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn btn-small view-project-btn" data-project="2">View Project</button>
+                        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card reveal-up" style="transition-delay: 0.2s">
+                <div class="project-image">
+                    <img src="assets/project_thumbnails/thumb3.jpg" alt="Thumbnail" class="temp-white-thumb">
+                </div>
+                <div class="project-info">
+                    <h3>RAG AI Assistant</h3>
+                    <p>Retrieval-Augmented Generation assistant for internal documentation.</p>
+                    <div class="tech-tags">
+                        <span>Python</span><span>FastAPI</span><span>RAG</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn btn-small view-project-btn" data-project="3">View Project</button>
+                        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-card reveal-up">
+                <div class="project-image">
+                    <img src="assets/project_thumbnails/thumb4.jpg" alt="Thumbnail" class="temp-white-thumb">
+                </div>
+                <div class="project-info">
+                    <h3>Stock Price Forecasting</h3>
+                    <p>Time series forecasting using TensorFlow and Keras.</p>
+                    <div class="tech-tags">
+                        <span>TensorFlow</span><span>Keras</span><span>Python</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn btn-small view-project-btn" data-project="4">View Project</button>
+                        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-card reveal-up" style="transition-delay: 0.1s">
+                <div class="project-image">
+                    <img src="assets/project_thumbnails/thumb5.jpg" alt="Thumbnail" class="temp-white-thumb">
+                </div>
+                <div class="project-info">
+                    <h3>Healthcare Data Analytics</h3>
+                    <p>Statistical analysis of patient outcomes and treatment efficiency.</p>
+                    <div class="tech-tags">
+                        <span>SQL</span><span>Python</span><span>Seaborn</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn btn-small view-project-btn" data-project="5">View Project</button>
+                        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="project-card reveal-up" style="transition-delay: 0.2s">
+                <div class="project-image">
+                    <img src="assets/project_thumbnails/thumb6.jpg" alt="Thumbnail" class="temp-white-thumb">
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive personal portfolio with dark mode and animations.</p>
+                    <div class="tech-tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="btn btn-small view-project-btn" data-project="6">View Project</button>
+                        <a href="#" aria-label="GitHub"><i data-feather="github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title reveal-up">Skills & Technologies</h2>
+        <div class="skills-container">
+            <!-- Programming -->
+            <div class="skill-category reveal-up">
+                <div class="skill-header">
+                    <i data-feather="code"></i>
+                    <h3>Programming</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">SQL</span>
+                    <span class="skill-pill">HTML</span>
+                    <span class="skill-pill">CSS</span>
+                    <span class="skill-pill">JavaScript</span>
+                </div>
+            </div>
+            <!-- Libraries -->
+            <div class="skill-category reveal-up" style="transition-delay: 0.1s">
+                <div class="skill-header">
+                    <i data-feather="box"></i>
+                    <h3>Libraries</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">NumPy</span>
+                    <span class="skill-pill">Pandas</span>
+                    <span class="skill-pill">Seaborn</span>
+                    <span class="skill-pill">Matplotlib</span>
+                    <span class="skill-pill">TensorFlow</span>
+                    <span class="skill-pill">Scikit-learn</span>
+                    <span class="skill-pill">Keras</span>
+                </div>
+            </div>
+            <!-- Frameworks -->
+            <div class="skill-category reveal-up" style="transition-delay: 0.2s">
+                <div class="skill-header">
+                    <i data-feather="layers"></i>
+                    <h3>Frameworks</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">FastAPI</span>
+                    <span class="skill-pill">RAG</span>
+                </div>
+            </div>
+            <!-- Tools -->
+            <div class="skill-category reveal-up" style="transition-delay: 0.3s">
+                <div class="skill-header">
+                    <i data-feather="tool"></i>
+                    <h3>Tools</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">Power BI</span>
+                    <span class="skill-pill">Excel</span>
+                    <span class="skill-pill">GitHub</span>
+                    <span class="skill-pill">VS Code</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+        <h2 class="section-title reveal-up">Certificates</h2>
+        <div class="certificates-grid">
+            <div class="cert-card reveal-up view-cert-btn">
+                <div class="cert-image"><img src="assets/certificate_thumbnails/cert1.jpg" alt="thumb" class="temp-white-thumb"></div>
+                <div class="cert-info">
+                    <h4>IBM Data Science Professional Certificate</h4>
+                    <p>IBM / Coursera</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-up view-cert-btn" style="transition-delay: 0.1s">
+                <div class="cert-image"><img src="assets/certificate_thumbnails/cert2.jpg" alt="thumb" class="temp-white-thumb"></div>
+                <div class="cert-info">
+                    <h4>Machine Learning Specialization</h4>
+                    <p>Stanford / Coursera</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-up view-cert-btn" style="transition-delay: 0.2s">
+                <div class="cert-image"><img src="assets/certificate_thumbnails/cert3.jpg" alt="thumb" class="temp-white-thumb"></div>
+                <div class="cert-info">
+                    <h4>Power BI Data Analyst Associate</h4>
+                    <p>Microsoft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title reveal-up">Get In Touch</h2>
+        <div class="contact-container reveal-up">
+            <div class="contact-socials">
+                <a href="#" class="contact-icon" aria-label="Email"><i data-feather="mail"></i></a>
+                <a href="#" class="contact-icon" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                <a href="#" class="contact-icon" aria-label="GitHub"><i data-feather="github"></i></a>
+                <a href="assets/resume/resume.pdf" class="contact-icon" aria-label="Resume Download" download><i data-feather="file-text"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Amaldev. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="#"><i data-feather="github"></i></a>
+                <a href="#"><i data-feather="linkedin"></i></a>
+            </div>
+        </div>
+        <button id="back-to-top" aria-label="Back to Top"><i data-feather="arrow-up"></i></button>
+    </footer>
+
+    <!-- Modals -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="project-modal-body"></div>
+        </div>
+    </div>
+
+    <div id="cert-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="cert-modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
