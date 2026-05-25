@@ -2,29 +2,56 @@
 feather.replace();
 
 // ==========================================
-// Preloader
+// AI / Data Science Preloader Sequence
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Force page to start from the hero section on refresh
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     const preloader = document.getElementById('preloader');
-    const equations = document.querySelectorAll('.math-equations .eq');
-    let eqIndex = 0;
+    const stepDb = document.getElementById('step-db');
+    const stepStats = document.getElementById('step-stats');
+    const stepNn = document.getElementById('step-nn');
+    const percentText = document.getElementById('loading-percentage');
 
-    if (preloader && equations.length > 0) {
-        // Cycle equations
-        const eqInterval = setInterval(() => {
-            equations.forEach(eq => eq.classList.remove('active'));
-            eqIndex = (eqIndex + 1) % equations.length;
-            equations[eqIndex].classList.add('active');
-        }, 1200); // Change equation every 1200ms
+    if (preloader && stepDb && stepStats && stepNn) {
+        // Global loading percentage (0 to 100 over 5.0 seconds)
+        let percent = 0;
+        const percentInterval = setInterval(() => {
+            percent += 1;
+            if (percentText) {
+                percentText.textContent = `${percent}%`;
+            }
+            if (percent >= 100) {
+                clearInterval(percentInterval);
+            }
+        }, 50); // 100 steps * 50ms = 5000ms
 
-        // Hide preloader after 5s
+        // T = 0s: Step 1 (Database) active
+        stepDb.classList.add('active');
+
+        // T = 1.5s: Step 2 (Stats) active
         setTimeout(() => {
-            clearInterval(eqInterval);
-            preloader.style.opacity = '0';
-            preloader.style.visibility = 'hidden';
+            stepDb.classList.remove('active');
+            stepStats.classList.add('active');
+        }, 1500);
+
+        // T = 2.8s: Step 3 (CNN Feature Extraction) active
+        setTimeout(() => {
+            stepStats.classList.remove('active');
+            stepNn.classList.add('active');
+        }, 2800);
+
+        // T = 5.0s: Hide Preloader smoothly
+        setTimeout(() => {
+            stepNn.classList.remove('active');
+            preloader.classList.add('fade-out-smooth');
             setTimeout(() => {
                 preloader.style.display = 'none';
-            }, 500); // Wait for transition
+            }, 800); // Wait for CSS transition
         }, 5000);
     }
 });
@@ -298,32 +325,225 @@ projectBtns.forEach(btn => {
     });
 });
 
-// Certificate Modal
-const certBtns = document.querySelectorAll('.view-cert-btn');
-const certModalBody = document.getElementById('cert-modal-body');
+// Certificates Data extraction
+const certCards = Array.from(document.querySelectorAll('.cert-card'));
+const certData = certCards.map(card => {
+    return {
+        src: card.querySelector('img').src,
+        title: card.querySelector('h4').innerText,
+        issuer: card.querySelector('p').innerText
+    };
+});
 
-certBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const card = e.currentTarget;
-        const title = card.querySelector('h4').innerText;
-        const issuer = card.querySelector('p').innerText;
-        
+// Carousel Logic
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+const nextButton = document.querySelector('.next-btn');
+const prevButton = document.querySelector('.prev-btn');
+const navDots = document.querySelector('.carousel-nav');
+
+let currentIndex = 0;
+let slidesVisible = getSlidesVisible();
+
+function getSlidesVisible() {
+    if (window.innerWidth <= 576) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
+}
+
+// Create dots
+function createDots() {
+    if (!navDots) return;
+    navDots.innerHTML = '';
+    const maxIndex = Math.max(0, slides.length - slidesVisible);
+    for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => moveToSlide(i));
+        navDots.appendChild(dot);
+    }
+}
+
+function updateDots() {
+    if (!navDots) return;
+    const dots = Array.from(navDots.children);
+    dots.forEach(dot => dot.classList.remove('active'));
+    if(dots[currentIndex]) {
+        dots[currentIndex].classList.add('active');
+    }
+}
+
+function moveToSlide(index) {
+    if (!track) return;
+    const maxIndex = Math.max(0, slides.length - slidesVisible);
+    if (index < 0) index = 0;
+    if (index > maxIndex) index = maxIndex;
+    
+    currentIndex = index;
+    const amountToMove = -currentIndex * (100 / slidesVisible);
+    track.style.transform = `translateX(${amountToMove}%)`;
+    updateDots();
+}
+
+if (nextButton && prevButton) {
+    nextButton.addEventListener('click', () => {
+        const maxIndex = Math.max(0, slides.length - slidesVisible);
+        if (currentIndex < maxIndex) moveToSlide(currentIndex + 1);
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) moveToSlide(currentIndex - 1);
+    });
+}
+
+window.addEventListener('resize', () => {
+    const newSlidesVisible = getSlidesVisible();
+    if (newSlidesVisible !== slidesVisible) {
+        slidesVisible = newSlidesVisible;
+        createDots();
+        moveToSlide(currentIndex);
+    }
+});
+createDots();
+
+// Certificate Modal Logic
+const certModalBody = document.getElementById('cert-modal-body');
+const modalPrev = document.querySelector('.modal-prev');
+const modalNext = document.querySelector('.modal-next');
+let currentModalIndex = 0;
+
+function openCertModal(index) {
+    currentModalIndex = index;
+    updateModalContent();
+    if (certModal) certModal.classList.add('active');
+}
+
+function updateModalContent() {
+    if (!certModalBody || certData.length === 0) return;
+    
+    certModalBody.style.opacity = 0;
+    certModalBody.style.transform = 'scale(0.98)';
+    
+    setTimeout(() => {
+        const data = certData[currentModalIndex];
         certModalBody.innerHTML = `
-            <div style="text-align: center;">
-                <div style="width: 100px; height: 100px; margin: 0 auto 2rem; border-radius: 50%; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
-                    <i data-feather="award" style="width: 50px; height: 50px;"></i>
-                </div>
-                <h2>${title}</h2>
-                <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 1.1rem;">${issuer}</p>
-                <div style="margin-top: 2rem; padding: 2rem; border: 1px dashed var(--border-color); border-radius: 8px;">
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Certificate preview placeholder.</p>
-                </div>
+            <div class="cert-modal-body-content">
+                <img src="${data.src}" alt="${data.title}" class="cert-modal-image">
+                <h2 class="cert-modal-title">${data.title}</h2>
+                <p class="cert-modal-issuer">${data.issuer}</p>
             </div>
         `;
         
-        feather.replace();
-        certModal.classList.add('active');
+        if (modalPrev) modalPrev.style.display = currentModalIndex === 0 ? 'none' : 'flex';
+        if (modalNext) modalNext.style.display = currentModalIndex === certData.length - 1 ? 'none' : 'flex';
+        
+        certModalBody.style.opacity = 1;
+        certModalBody.style.transform = 'scale(1)';
+    }, 250);
+}
+
+certCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        openCertModal(index);
     });
 });
 
+if (modalPrev && modalNext) {
+    modalPrev.addEventListener('click', () => {
+        if (currentModalIndex > 0) {
+            currentModalIndex--;
+            updateModalContent();
+        }
+    });
 
+    modalNext.addEventListener('click', () => {
+        if (currentModalIndex < certData.length - 1) {
+            currentModalIndex++;
+            updateModalContent();
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (certModal && certModal.classList.contains('active')) {
+        if (e.key === 'ArrowLeft' && currentModalIndex > 0) {
+            currentModalIndex--;
+            updateModalContent();
+        } else if (e.key === 'ArrowRight' && currentModalIndex < certData.length - 1) {
+            currentModalIndex++;
+            updateModalContent();
+        } else if (e.key === 'Escape') {
+            certModal.classList.remove('active');
+        }
+    }
+});
+
+// Background Data Flow Parallax Animation
+const dataElements = document.querySelectorAll('.data-element');
+if (dataElements.length > 0) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                dataElements.forEach(el => {
+                    const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
+                    const yPos = -(scrolled * speed);
+                    el.style.transform = `translateY(${yPos}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
+// Background Opacity Scroll Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const dataFlowBg = document.getElementById('data-flow-bg');
+    const sections = document.querySelectorAll('.section:not(#hero):not(#contact)');
+    const heroSection = document.getElementById('hero');
+    const contactSection = document.getElementById('contact');
+    
+    window.addEventListener('scroll', () => {
+        if (!dataFlowBg) return;
+        
+        const scrollY = window.scrollY;
+        const viewportCenter = scrollY + window.innerHeight / 2;
+        
+        let state = 'default';
+        
+        if (heroSection && viewportCenter < heroSection.offsetTop + heroSection.offsetHeight) {
+            state = 'default';
+        } else if (contactSection && viewportCenter >= contactSection.offsetTop && viewportCenter <= contactSection.offsetTop + contactSection.offsetHeight) {
+            state = 'default';
+        } else {
+            let inTextContent = false;
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop;
+                const secBottom = secTop + sec.offsetHeight;
+                if (viewportCenter >= secTop + 100 && viewportCenter <= secBottom - 100) {
+                    inTextContent = true;
+                }
+            });
+            
+            if (inTextContent) {
+                state = 'dimmed';
+            } else {
+                state = 'bright';
+            }
+        }
+        
+        if (state === 'dimmed') {
+            dataFlowBg.classList.add('dimmed');
+            dataFlowBg.classList.remove('bright');
+        } else if (state === 'bright') {
+            dataFlowBg.classList.add('bright');
+            dataFlowBg.classList.remove('dimmed');
+        } else {
+            dataFlowBg.classList.remove('dimmed', 'bright');
+        }
+    });
+});
