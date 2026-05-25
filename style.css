@@ -1733,6 +1733,14 @@ footer {
         font-size: 1rem;
     }
     
+    #data-flow-bg:not(.dimmed):not(.bright) {
+        opacity: 0.05;
+    }
+    
+    [data-theme="dark"] #data-flow-bg:not(.dimmed):not(.bright) {
+        opacity: 0.08;
+    }
+    
     .profile-pic {
         width: 100%;
         max-width: 280px;
