@@ -434,7 +434,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-buttons-right {
     position: absolute;
-    top: -40px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -452,16 +452,17 @@ h1, h2, h3, h4, h5, h6 {
 /* Minimalist Animated Spider Chart */
 .spider-container {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .spider-chart {
-    width: 400px;
-    height: 400px;
+    width: 320px;
+    height: 320px;
     overflow: visible;
 }
 
@@ -1241,7 +1242,8 @@ footer {
 
 .math-equations .eq {
     position: absolute;
-    font-size: 1.2rem;
+    font-size: clamp(0.6rem, 3.5vw, 1.2rem);
+    white-space: nowrap;
     color: var(--text-primary);
     font-weight: 600;
     opacity: 0;
@@ -1316,7 +1318,7 @@ footer {
     }
 
     .spider-container {
-        transform: scale(0.55);
+        transform: scale(0.7);
     }
     
     .about-grid {
@@ -1361,7 +1363,7 @@ footer {
     }
     
     .spider-container {
-        transform: scale(0.45);
+        transform: scale(0.6);
         transform-origin: center;
     }
 
@@ -1386,7 +1388,6 @@ footer {
     }
     
     .math-equations .eq {
-        font-size: 1rem;
         text-align: center;
         width: 100%;
     }
@@ -1423,17 +1424,13 @@ footer {
         font-size: 1.1rem;
     }
 
-    .math-equations .eq {
-        font-size: 0.85rem;
-    }
-
     .hero-right {
         height: 220px;
         margin-top: -30px;
     }
 
     .spider-container {
-        transform: scale(0.35);
+        transform: scale(0.5);
     }
     
     .hero-buttons-right .btn-pill {
