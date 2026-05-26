@@ -228,7 +228,9 @@ features: [
     "Data preprocessing, feature engineering, and exploratory data analysis (EDA)",
     "Implemented Logistic Regression and XGBoost Classifier for risk prediction",
     "Achieved 95.18% accuracy with Logistic Regression outperforming XGBoost (95.05%)"
-]
+],
+githubLink: "https://github.com/amaldev-data/Machine-Learning-Projects-/tree/main/Gold-Loan-Credit-Risk/GoldLoan%20Risk%20Engine", // Replace '#' with your GitHub repository link
+demoLink: "#"    // Replace '#' with your Live Demo link
     },
     2: {
         title: "Used Car Price Prediction",
@@ -249,28 +251,33 @@ features: [
         "Applied categorical encoding, outlier removal, and feature scaling for improved model performance",
         "Built a Multiple Linear Regression model with cross-validation and feature importance analysis",
         "Identified mileage and vehicle age as dominant pricing factors while capturing premium-brand price trends"
-        ]
+        ],
+    githubLink: "https://github.com/amaldev-data/Machine-Learning-Projects-/tree/main/Usedcar_price_prediction", // Replace '#' with your GitHub repository link
+    demoLink: "https://amaldev-data.github.io/Used-car-website/"    // Replace '#' with your Live Demo link
     },
     
-    6: {
-      title: "Gold Loan Credit Risk Prediction",
-desc: "A machine learning project focused on assessing borrower risk in gold loan portfolios to minimize defaults and improve lending decisions using predictive analytics and classification models.",
+    3: {
+      title: "Global Data Center Risk Scoring for New Data Centers",
+
+desc: "A research and risk modelling project analyzing environmental, operational, physical, and cyber risks affecting global data-center locations using data analytics and machine learning.",
+
 tech: [
     "Python",
     "Pandas",
     "NumPy",
-    "Scikit-learn",
-    "XGBoost",
-    "Matplotlib",
-    "Seaborn",
-    "Excel"
+    "Excel",
+    "Power BI",
+    "Matplotlib"
 ],
+
 features: [
-    "Synthetic dataset generation using Faker library to simulate real-world gold loan customer and repayment data",
-    "Data preprocessing, missing value handling, feature engineering, and exploratory data analysis (EDA)",
-    "Implemented Logistic Regression and XGBoost Classifier for credit risk prediction and comparative evaluation",
-    "Achieved 95.18% accuracy with Logistic Regression outperforming XGBoost (95.05%) for final deployment"
-]
+    "Performed exploratory data analysis on global datasets to evaluate multi-dimensional data-center risks",
+    "Cleaned, integrated, and processed datasets to develop a city-level risk scoring framework",
+    "Visualized operational and environmental risk insights using Excel and Power BI dashboards",
+    "Developed machine-learning models to predict future location-based risk levels for infrastructure planning"
+],
+githubLink: "https://github.com/amaldev-data/Datacenter_Project", // Replace '#' with your GitHub repository link
+demoLink: "#"    // Replace '#' with your Live Demo link
     }
 };
 
@@ -287,6 +294,11 @@ projectBtns.forEach(btn => {
             let techHtml = data.tech.map(t => `<span class="skill-pill" style="font-size: 0.8rem; padding: 0.2rem 0.6rem;">${t}</span>`).join('');
             let featuresHtml = data.features.map(f => `<li>${f}</li>`).join('');
             
+            let githubHref = data.githubLink || "#";
+            let demoHref = data.demoLink || "#";
+            let githubTarget = githubHref !== "#" ? 'target="_blank" rel="noopener noreferrer"' : '';
+            let demoTarget = demoHref !== "#" ? 'target="_blank" rel="noopener noreferrer"' : '';
+            
             projectModalBody.innerHTML = `
                 <div class="project-modal-header">
                     <h2>${data.title}</h2>
@@ -302,8 +314,8 @@ projectBtns.forEach(btn => {
                     </ul>
                 </div>
                 <div class="modal-actions">
-                    <a href="#" class="btn btn-primary"><i data-feather="github"></i> View Repository</a>
-                    <a href="#" class="btn btn-outline"><i data-feather="external-link"></i> Live Demo</a>
+                    <a href="${githubHref}" ${githubTarget} class="btn btn-primary"><i data-feather="github"></i> View Repository</a>
+                    <a href="${demoHref}" ${demoTarget} class="btn btn-outline"><i data-feather="external-link"></i> Live Demo</a>
                 </div>
             `;
             

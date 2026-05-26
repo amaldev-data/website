@@ -16,6 +16,7 @@
     --glass-border: rgba(0, 0, 0, 0.1);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     --hover-glow: rgba(0, 0, 0, 0.1);
+    --pill-bg: #eaeaea;
 }
 
 [data-theme="dark"] {
@@ -31,6 +32,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow: 0 10px 30px rgba(255, 255, 255, 0.02);
     --hover-glow: rgba(255, 255, 255, 0.1);
+    --pill-bg: #333333;
     
     /* Dotted Grid */
     --dot-color: rgba(255, 255, 255, 0.15);
@@ -940,6 +942,7 @@ h1, h2, h3, h4, h5, h6 {
 .skill-pill {
     padding: 0.4rem 1rem;
     border: 1px solid var(--border-color);
+    background-color: var(--pill-bg);
     border-radius: 20px;
     font-size: 0.9rem;
     transition: all 0.3s ease;
