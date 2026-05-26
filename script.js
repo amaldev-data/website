@@ -217,73 +217,60 @@ window.addEventListener('click', (e) => {
     if (e.target === certModal) certModal.classList.remove('active');
 });
 
-// Project Data
+// Project Data====================================================================================================================================
 const projectData = {
     1: {
-        title: "Customer Churn Prediction",
-        desc: "An end-to-end machine learning pipeline to predict customer churn in a telecommunications company. The model analyzes user behavior, demographic data, and account information to identify high-risk customers.",
-        tech: ["Python", "Scikit-learn", "Pandas", "XGBoost", "Flask"],
-        features: [
-            "Data preprocessing and feature engineering",
-            "Model training and hyperparameter tuning",
-            "REST API deployment",
-            "Interactive dashboard for business stakeholders"
-        ]
+       title: "Gold Loan Credit Risk Prediction",
+desc: "Assessing borrower risk in gold loan portfolios is critical for financial institutions to minimize defaults and improve lending decisions. A structured approach was used to identify high-risk borrowers and improve credit decision accuracy.",
+tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Matplotlib", "Seaborn", "Excel"],
+features: [
+    "Synthetic dataset generation using Faker library for realistic gold loan data simulation",
+    "Data preprocessing, feature engineering, and exploratory data analysis (EDA)",
+    "Implemented Logistic Regression and XGBoost Classifier for risk prediction",
+    "Achieved 95.18% accuracy with Logistic Regression outperforming XGBoost (95.05%)"
+]
     },
     2: {
-        title: "Sales Performance Dashboard",
-        desc: "A comprehensive Power BI dashboard designed for regional managers to track sales performance, identify trends, and forecast future revenue based on historical data.",
-        tech: ["Power BI", "SQL", "Excel", "DAX"],
-        features: [
-            "Real-time data integration from SQL Server",
-            "Advanced DAX measures for YTD and YoY calculations",
-            "Interactive drill-through reports",
-            "Automated weekly PDF report generation"
+        title: "Used Car Price Prediction",
+
+    desc: "A machine learning project designed to predict fair used-car prices using vehicle specifications, historical listing data, and predictive analytics to reduce information asymmetry in the used-car market.",
+
+    tech: [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Matplotlib",
+        "Seaborn"
+    ],
+
+    features: [
+        "Performed comprehensive exploratory data analysis (EDA) to identify major vehicle price drivers",
+        "Applied categorical encoding, outlier removal, and feature scaling for improved model performance",
+        "Built a Multiple Linear Regression model with cross-validation and feature importance analysis",
+        "Identified mileage and vehicle age as dominant pricing factors while capturing premium-brand price trends"
         ]
     },
-    3: {
-        title: "RAG AI Assistant",
-        desc: "A custom Retrieval-Augmented Generation (RAG) assistant built to help employees quickly find answers within the company's vast internal documentation.",
-        tech: ["Python", "FastAPI", "LangChain", "OpenAI", "Pinecone"],
-        features: [
-            "Vector database integration for fast semantic search",
-            "Context-aware response generation",
-            "Streaming responses via WebSocket",
-            "Admin interface for document management"
-        ]
-    },
-    4: {
-        title: "Stock Price Forecasting",
-        desc: "A deep learning model using LSTM networks to forecast short-term stock price movements based on historical price data and technical indicators.",
-        tech: ["TensorFlow", "Keras", "Python", "yfinance"],
-        features: [
-            "Time series data normalization and sequencing",
-            "LSTM neural network architecture",
-            "Performance evaluation using RMSE and MAE",
-            "Automated daily data fetching and prediction"
-        ]
-    },
-    5: {
-        title: "Healthcare Data Analytics",
-        desc: "Statistical analysis project focusing on patient outcomes and treatment efficiency across multiple hospitals, highlighting areas for operational improvement.",
-        tech: ["SQL", "Python", "Seaborn", "Statsmodels"],
-        features: [
-            "Complex SQL queries for data aggregation",
-            "Hypothesis testing (A/B testing)",
-            "Visual storytelling through Seaborn charts",
-            "Actionable insights report for management"
-        ]
-    },
+    
     6: {
-        title: "Portfolio Website",
-        desc: "A modern, fully responsive personal portfolio website built without frameworks to showcase projects, skills, and professional experience.",
-        tech: ["HTML5", "CSS3", "JavaScript"],
-        features: [
-            "Custom CSS theme system (Light/Dark mode)",
-            "Intersection Observer for scroll animations",
-            "Responsive layout using CSS Grid and Flexbox",
-            "No dependencies (except Feather icons)"
-        ]
+      title: "Gold Loan Credit Risk Prediction",
+desc: "A machine learning project focused on assessing borrower risk in gold loan portfolios to minimize defaults and improve lending decisions using predictive analytics and classification models.",
+tech: [
+    "Python",
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "XGBoost",
+    "Matplotlib",
+    "Seaborn",
+    "Excel"
+],
+features: [
+    "Synthetic dataset generation using Faker library to simulate real-world gold loan customer and repayment data",
+    "Data preprocessing, missing value handling, feature engineering, and exploratory data analysis (EDA)",
+    "Implemented Logistic Regression and XGBoost Classifier for credit risk prediction and comparative evaluation",
+    "Achieved 95.18% accuracy with Logistic Regression outperforming XGBoost (95.05%) for final deployment"
+]
     }
 };
 
@@ -316,6 +303,7 @@ projectBtns.forEach(btn => {
                 </div>
                 <div class="modal-actions">
                     <a href="#" class="btn btn-primary"><i data-feather="github"></i> View Repository</a>
+                    <a href="#" class="btn btn-outline"><i data-feather="external-link"></i> Live Demo</a>
                 </div>
             `;
             
@@ -324,6 +312,31 @@ projectBtns.forEach(btn => {
         }
     });
 });
+
+// Projects Carousel Logic
+const projectsContainer = document.getElementById('projects-container');
+const projectPrevBtn = document.querySelector('.project-prev');
+const projectNextBtn = document.querySelector('.project-next');
+
+if (projectsContainer && projectPrevBtn && projectNextBtn) {
+    projectPrevBtn.addEventListener('click', () => {
+        const firstCard = projectsContainer.querySelector('.project-card');
+        if(firstCard) {
+            const cardWidth = firstCard.offsetWidth;
+            const gap = parseFloat(getComputedStyle(projectsContainer).gap) || 0;
+            projectsContainer.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+        }
+    });
+
+    projectNextBtn.addEventListener('click', () => {
+        const firstCard = projectsContainer.querySelector('.project-card');
+        if(firstCard) {
+            const cardWidth = firstCard.offsetWidth;
+            const gap = parseFloat(getComputedStyle(projectsContainer).gap) || 0;
+            projectsContainer.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+        }
+    });
+}
 
 // Certificates Data extraction
 const certCards = Array.from(document.querySelectorAll('.cert-card'));

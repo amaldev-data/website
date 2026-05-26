@@ -722,10 +722,25 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    Projects Section
    ========================================================================== */
+.projects-carousel-wrapper {
+    position: relative;
+    max-width: 100%;
+    padding: 0 50px;
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    display: flex;
     gap: 2.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.projects-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .project-card {
@@ -736,7 +751,52 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
+    flex: 0 0 calc(33.333% - 1.666rem);
+    scroll-snap-align: start;
 }
+
+@media (max-width: 992px) {
+    .project-card {
+        flex: 0 0 calc(50% - 1.25rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 0 100%;
+    }
+    .projects-carousel-wrapper {
+        padding: 0 30px;
+    }
+}
+
+.project-nav-btn {
+    position: absolute;
+    top: calc(50% - 1rem); /* offset for padding bottom */
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.project-nav-btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+.project-prev { left: 0; }
+.project-next { right: 0; }
 
 .project-card:hover {
     transform: translateY(-10px);
@@ -825,6 +885,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-links a:hover {
     color: var(--accent);
+}
+
+.view-project-btn {
+    border-radius: 30px;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border: 1px solid var(--accent);
+}
+
+.view-project-btn:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+    box-shadow: 0 0 15px var(--hover-glow);
 }
 
 /* ==========================================================================
