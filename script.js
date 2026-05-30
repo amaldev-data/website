@@ -286,12 +286,15 @@ demoLink: "#"    // Replace '#' with your Live Demo link
 };
 
 // Open Project Modal
-const projectBtns = document.querySelectorAll('.view-project-btn');
+const projectCards = document.querySelectorAll('.project-card');
 const projectModalBody = document.getElementById('project-modal-body');
 
-projectBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const projectId = e.target.getAttribute('data-project');
+projectCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        const btn = card.querySelector('.view-project-btn');
+        if (!btn) return;
+        const projectId = btn.getAttribute('data-project');
         const data = projectData[projectId];
         
         if (data) {
