@@ -220,17 +220,21 @@ window.addEventListener('click', (e) => {
 // Project Data====================================================================================================================================
 const projectData = {
     1: {
-       title: "Gold Loan Credit Risk Prediction",
-desc: "Assessing borrower risk in gold loan portfolios is critical for financial institutions to minimize defaults and improve lending decisions. A structured approach was used to identify high-risk borrowers and improve credit decision accuracy.",
-tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "Matplotlib", "Seaborn", "Excel"],
+    title: "Gold Loan Credit Risk Prediction",
+    desc: "GoldFi is an AI-powered Gold Loan Credit Risk Prediction platform that helps banks and NBFCs make faster and safer lending decisions. It uses a Hybrid Risk Engine that combines Machine Learning and policy-based rules to evaluate borrower risk based on factors such as CIBIL score, debt burden ratio, loan-to-value (LTV), repayment history, income, and active loans. The frontend is built with HTML, CSS, and JavaScript and hosted on GitHub Pages, while the FastAPI backend is deployed on Render. GoldFi achieved a ROC-AUC score of 95.18%, demonstrating strong predictive accuracy and reliability.",
+    tech: ["Python","Scikit-learn", "XGBoost","Logistic Regression", "FastAPI", "HTML", "CSS", "JavaScript", "Render"],
 features: [
-    "Synthetic dataset generation using Faker library for realistic gold loan data simulation",
-    "Data preprocessing, feature engineering, and exploratory data analysis (EDA)",
-    "Implemented Logistic Regression and XGBoost Classifier for risk prediction",
-    "Achieved 95.18% accuracy with Logistic Regression outperforming XGBoost (95.05%)"
+    "Hybrid Risk Engine combining Machine Learning and Policy-Based Controls",
+    "95.18% ROC-AUC Predictive Performance",
+    "Explainable AI (XAI) for Transparent Risk Assessment",
+    "Automated Risk Overrides and Loan Rejection Framework",
+    "Interactive Real-Time Credit Risk Dashboard",
+    "Dynamic Gold Collateral Valuation System",
+    "High-Performance FastAPI Prediction API",
+    "Designed for Banks, NBFCs, and Gold Lending Institutions"
 ],
-githubLink: "https://github.com/amaldev-data/Machine-Learning-Projects-/tree/main/Gold-Loan-Credit-Risk/GoldLoan%20Risk%20Engine", // Replace '#' with your GitHub repository link
-demoLink: "#"    // Replace '#' with your Live Demo link
+githubLink: "https://github.com/amaldev-data/GoldFi", // Replace '#' with your GitHub repository link
+demoLink: "https://amaldev-data.github.io/GoldFi/"    // Replace '#' with your Live Demo link
     },
     2: {
         title: "Used Car Price Prediction",
