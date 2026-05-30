@@ -220,7 +220,7 @@ window.addEventListener('click', (e) => {
 // Project Data====================================================================================================================================
 const projectData = {
     1: {
-    title: "Gold Loan Credit Risk Prediction",
+    title: "GoldFi- AI powered Gold Loan credit risk platform",
     desc: "GoldFi is an AI-powered Gold Loan Credit Risk Prediction platform that helps banks and NBFCs make faster and safer lending decisions. It uses a Hybrid Risk Engine that combines Machine Learning and policy-based rules to evaluate borrower risk based on factors such as CIBIL score, debt burden ratio, loan-to-value (LTV), repayment history, income, and active loans. The frontend is built with HTML, CSS, and JavaScript and hosted on GitHub Pages, while the FastAPI backend is deployed on Render. GoldFi achieved a ROC-AUC score of 95.18%, demonstrating strong predictive accuracy and reliability.",
     tech: ["Python","Scikit-learn", "XGBoost","Logistic Regression", "FastAPI", "HTML", "CSS", "JavaScript", "Render"],
 features: [
