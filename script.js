@@ -219,10 +219,31 @@ window.addEventListener('click', (e) => {
 
 // Project Data====================================================================================================================================
 const projectData = {
+    
     1: {
+    title: "ChurnOptix - AI Powered Telecommunications Customer Churn Prediction Platform",
+    desc: "ChurnOptix is an AI-powered customer churn prediction platform that enables telecom companies to identify at-risk subscribers and improve customer retention through machine learning and predictive analytics. Using customer demographics, contract details, billing information, service usage, and tenure data, the platform predicts churn probability and provides actionable retention insights. The Random Forest Classifier achieved a ROC-AUC score of 83.93% and was selected as the production model due to its strong predictive performance. The platform features Explainable AI (XAI), an interactive analytics dashboard, and a FastAPI-powered prediction API deployed on Render.",
+    tech: ["Python", "Scikit-learn", "Random Forest Classifier", "Logistic Regression", "FastAPI", "HTML", "CSS", "JavaScript", "Chart.js", "Render"],
+    features: [
+        "AI-Powered Customer Churn Prediction Engine",
+        "83.93% ROC-AUC Predictive Performance",
+        "Explainable AI (XAI) for Churn Driver Analysis",
+        "Real-Time Churn Risk Assessment API",
+        "Interactive Customer Retention Dashboard",
+        "Customer Lifetime Value (LTV) Risk Insights",
+        "Churn Probability Scoring and Risk Segmentation",
+        "High-Performance FastAPI Prediction API",
+        "Dynamic Customer Profile Simulation",
+        "Designed for Telecom Operators and Customer Success Teams"
+    ],
+    githubLink: "https://github.com/amaldev-data/ChurnOptix",
+    demoLink: "https://amaldev-data.github.io/ChurnOptix/"
+},
+    
+    2: {
     title: "GoldFi- AI powered Gold Loan credit risk platform",
-    desc: "GoldFi is an AI-powered Gold Loan Credit Risk Prediction platform that helps banks and NBFCs make faster and safer lending decisions. It uses a Hybrid Risk Engine that combines Machine Learning and policy-based rules to evaluate borrower risk based on factors such as CIBIL score, debt burden ratio, loan-to-value (LTV), repayment history, income, and active loans. The frontend is built with HTML, CSS, and JavaScript and hosted on GitHub Pages, while the FastAPI backend is deployed on Render. GoldFi achieved a ROC-AUC score of 95.18%, demonstrating strong predictive accuracy and reliability.",
-    tech: ["Python","Scikit-learn", "XGBoost","Logistic Regression", "FastAPI", "HTML", "CSS", "JavaScript", "Render"],
+    desc: "GoldFi is an AI-powered Gold Loan Credit Risk Prediction platform that helps banks and NBFCs make faster, safer, and data-driven lending decisions. It uses a Hybrid Risk Engine that combines Machine Learning and policy-based risk controls to assess borrower default risk based on factors such as CIBIL score, debt burden ratio, loan-to-value (LTV), repayment history, income, and active loans. During model evaluation, Logistic Regression achieved a ROC-AUC score of 95.18%, outperforming XGBoost at 95.09%, and was selected as the production model for its strong predictive performance and interpretability. The frontend is built with HTML, CSS, and JavaScript and hosted on GitHub Pages, while the FastAPI backend is deployed on Render.",
+    tech: ["Python","Scikit-learn", "XGBoost Classifier","Logistic Regression", "FastAPI", "HTML", "CSS", "JavaScript", "Render"],
 features: [
     "Hybrid Risk Engine combining Machine Learning and Policy-Based Controls",
     "95.18% ROC-AUC Predictive Performance",
@@ -236,11 +257,10 @@ features: [
 githubLink: "https://github.com/amaldev-data/GoldFi", // Replace '#' with your GitHub repository link
 demoLink: "https://amaldev-data.github.io/GoldFi/"    // Replace '#' with your Live Demo link
     },
-    2: {
-        title: "Used Car Price Prediction",
-
+    
+    3: {
+    title: "Used Car Price Prediction",
     desc: "A machine learning project designed to predict fair used-car prices using vehicle specifications, historical listing data, and predictive analytics to reduce information asymmetry in the used-car market.",
-
     tech: [
         "Python",
         "Pandas",
@@ -260,7 +280,7 @@ demoLink: "https://amaldev-data.github.io/GoldFi/"    // Replace '#' with your L
     demoLink: "https://amaldev-data.github.io/Used-car-website/"    // Replace '#' with your Live Demo link
     },
     
-    3: {
+    4: {
       title: "Global Data Center Risk Scoring for New Data Centers",
 
 desc: "A research and risk modelling project analyzing environmental, operational, physical, and cyber risks affecting global data-center locations using data analytics and machine learning.",
